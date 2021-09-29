@@ -14,22 +14,19 @@
 //另可透過package.json指定所有相關套件後 npm install 即可安裝所有套件
 
 const readline = require('readline-sync');
-weight = readline.question('請輸入您的體重(kg)?');
-height = readline.question('請輸入您的身高(cm)?');  
-//var bmi = weight/((height/100)**2);
-//console.log("Hello! Your BMI value is "+ bmi);
-weight=Number(weight)//字串轉數字
-height=Number(height)//字串轉數字
-if(isNaN(height)||height > 220 || height < 50){
-    console.log('輸入的資料有誤，請輸入50~220之間的數字')
-} else 
-    console.log('此身高在合理範圍')
-;
-
-if(isNaN(weight)||weight > 200 || weight < 10){
-    console.log('輸入的資料有誤，請輸入10~200之間的數字')
-} else 
-    console.log('此體重在合理範圍')
-;
+height = readline.question('請輸入您的身高(cm)?');
+height = Number(height)
+//判斷數值是否合理
+if (isNaN(height) || height <= 0 || height > 220) {
+    console.log("您輸入的資料有誤! 請輸入介於1~220之間的數字")
+} else {
+    //計算理想的體重範圍
+    height = (height / 100);
+    //當bmi=18.5 時的體重?
+    var idealLow = 18.5 * height**2;
+    //當bmi=24 時的體重?
+    var idealHi = 24 * height**2;
+    console.log("你的理想體重範圍為: " + idealLow +" ~ "+idealHi+" Kg");
+}
 //not only bmi value, but also judgement
 //Ask user to input height only, is it workable?
