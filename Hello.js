@@ -31,5 +31,6 @@ if(isNaN(weight)||weight > 200 || weight < 10){
 } else 
     console.log('此體重在合理範圍')
 ;
+//0929
 //not only bmi value, but also judgement
 //Ask user to input height only, is it workable?
