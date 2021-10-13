@@ -1,9 +1,8 @@
 const readline = require('readline-sync');
-//var top=100; //index value
+
+//var top=50; //index value
 //var bottom=0;
-
 var floorName=["B3","B2","B1","1","2","2M","3","5","6","7","8"]
-
 var floorName2=[];    // 2 假設大樓50層樓,8樓以後都是照順序規律的,用程式建立floorName 樓層名稱 homework,
 for(var i=0,k=9;i<=50,k<=50;i++)
 {
@@ -14,9 +13,8 @@ Array.prototype.push.apply(floorName,floorName2 );//合併兩個陣列
 console.log(floorName);
 
 
-
 // 1 秀出所有樓層名稱, sol->呼叫陣列提供的toString()
-
+// 2 用程式建立floorName 樓層名稱 homework#2, push(), pop(), unshift(), shift()
 // 3 讓 JS 暫停一段時間後續行 homework#2
 
 var currentFloor = 5; //index value of floorName
@@ -29,7 +27,9 @@ while(true){ //無窮迴圈
     //從floorName.indexOf()取出索引值，若為-1代表無此樓層
     targetFloor = targetFloor.toUpperCase();
     targetFloor = floorName.indexOf(targetFloor); //轉成整數
-     if(targetFloor<0 && targetFloor<bottom && targetFloor>top||isNaN(targetFloor)){
+    //if(isNaN(targetFloor) || targetFloor<bottom || targetFloor>top){
+    if(targetFloor<0){
+       //console.log("請輸入介於"+floorName[bottom]+"到"+floorName[top]+"之間的樓層名稱!");
        console.log("請輸入介於"+floorName.toString()+"之間的樓層名稱!");
        continue;
     }
@@ -42,11 +42,13 @@ while(true){ //無窮迴圈
      if(targetFloor<currentFloor){ //down
         console.log("電梯往下...");
         //改用 for(初始值; 條件判斷; 累加減){}
-        while(targetFloor < currentFloor)
-        {
-
+        while(targetFloor < currentFloor){
+            //for(var i=currentFloor; i>targetFloor;i--){
+            //for(; targetFloor<currentFloor;currentFloor--){
+            //currentFloor = currentFloor - 1;
+            // currentFloor -= 1;
              currentFloor--;
-          setInterval(function(){ console.log("電梯在"+floorName[currentFloor]+"樓"); }, 3000);
+            console.log("電梯在"+floorName[currentFloor]+"樓");
         }
         
      }else{//up
@@ -57,6 +59,7 @@ while(true){ //無窮迴圈
             // currentFloor += 1;
             // currentFloor++;
             console.log("電梯在"+floorName[currentFloor]+"樓");
+            
         }while(targetFloor > currentFloor);
      }
     }
