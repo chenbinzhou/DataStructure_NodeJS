@@ -49,6 +49,7 @@ while(true){ //無窮迴圈
             // currentFloor -= 1;
              currentFloor--;
             console.log("電梯在"+floorName[currentFloor]+"樓");
+            
         }
         
      }else{//up

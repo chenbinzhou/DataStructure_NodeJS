@@ -1,30 +1,24 @@
 var poker=[];
-var H=["♥J","♥Q","♥K"]
-var C=["♣J","♣Q","♣K"]
-var D=["♦J","♦Q","♦K"]
-var S=["♠J","♠Q","♠K"]
 
-for(var i=0;i<40;i++){
+
+for(var i=0;i<52;i++){
     switch(parseInt(i/10)){
         case 0:
-            poker.push("♥"+(parseInt(i%10)+1));
+            poker.push("♥"+(parseInt(i%13)+1));
             
             break;
         case 1:
-            poker.push("♠"+(parseInt(i%10)+1));
+            poker.push("♠"+(parseInt(i%13)+1));
             break;
         case 2:
-            poker.push("♣"+(parseInt(i%10)+1));
+            poker.push("♣"+(parseInt(i%13)+1));
             break;
         case 3:
-            poker.push("♦"+(parseInt(i%10)+1));
+            poker.push("♦"+(parseInt(i%13)+1));
     }
    
 }
-Array.prototype.push.apply(poker, H);
-Array.prototype.push.apply(poker, C);
-Array.prototype.push.apply(poker, D);
-Array.prototype.push.apply(poker, S);
+
 console.log(poker.toString());
 var player1=[], player2=[], player3=[],player4=[];
 
@@ -53,7 +47,7 @@ for (let i = 0; i < poker.length; ) {
 function compare(a,b){
     if(b.charCodeAt(0) == a.charCodeAt(0) ){
         //compare charAt(1) 同花色 不同數字 排序
-        return a.charCodeAt(1) - b.charCodeAt(1)}
+        return a - b}
     else{
         return a.charCodeAt(0) - b.charCodeAt(0)//不同花色排序 黑桃,梅花,愛心,方塊
     }
