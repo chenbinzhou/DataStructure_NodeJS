@@ -18,7 +18,7 @@ for(var i=0;i<52;i++){
     }
    
 }
-
+ 
 console.log(poker.toString());
 var player1=[], player2=[], player3=[],player4=[];
 
@@ -48,7 +48,7 @@ function compare(a,b){
     if(b.charCodeAt(0) == a.charCodeAt(0) )//同花色
      //compare charAt(1) charAt(2)同花色 不同數字 排序 
      
-    { return a - b}//沒作用要把花色去掉
+    {  return a.slice(1,a.length)-b.slice(1,b.length);}//沒作用要把花色去掉
 
     else{ return a.charCodeAt(0) - b.charCodeAt(0)//不同花色排序 黑桃,梅花,愛心,方塊
         }
