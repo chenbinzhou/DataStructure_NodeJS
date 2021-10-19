@@ -44,6 +44,7 @@ for (let i = 0; i < poker.length; ) {
     poker.splice(rand,1);
     
 }
+//大到小的排序比較函式
 function compare(a,b){
     if(b.charCodeAt(0) == a.charCodeAt(0))//同花色 不同數字 大小排序  
     {  return b.slice(1,b.length)-a.slice(1,a.length);}

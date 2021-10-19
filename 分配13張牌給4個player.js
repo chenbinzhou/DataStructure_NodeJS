@@ -17,7 +17,7 @@ for(var i=0;i<52;i++){
 }
 console.log(poker.toString());
 var player1=[], player2=[], player3=[],player4=[];
-//大小排序函式
+//大到小的排序函式
 function sortnumber(a,b){
     if(b.charCodeAt(0) == a.charCodeAt(0)) 
     {  return b.slice(1,b.length)-a.slice(1,a.length);}
