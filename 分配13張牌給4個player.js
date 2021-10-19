@@ -26,7 +26,7 @@ function sortnumber(a,b){
     else{ return b.charCodeAt(0) - a.charCodeAt(0)
         }
 }
-
+//洗牌
 function compare(a,b){
         return Math.random()-0.5;
 }
@@ -34,7 +34,7 @@ poker.sort(compare);
 console.log(poker.toString()); 
 
 //split every 13 card to player 1, 2, 3, 4
-
+//開始發牌
 //發牌給玩家1
 for(var x=0,y=0; y<13; x++){   
     player1[x]=poker[y++];}
@@ -52,7 +52,7 @@ for(var x=0,y=26; y<39; x++){
         player3[x]=poker[y++];}
         player3.sort(sortnumber);//排序手牌
         console.log("Player3:"+player3)
-        
+
 //發牌給玩家4
 for(var x=0,y=39; y<52; x++){  
         player4[x]=poker[y++];}
