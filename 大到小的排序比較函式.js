@@ -52,18 +52,18 @@ function compare(a,b){
         }
 }
 
-//console.log("Player1:"+player1)
+console.log("Player1:"+player1)//排序前的手牌
 player1.sort(compare);
-console.log("Player1:"+player1)
+console.log("Player1:"+player1)//排序後的手牌
 
-//console.log("Player2:"+player2)
+console.log("Player2:"+player2)//排序前的手牌
 player2.sort(compare)
-console.log("Player2:"+player2)
+console.log("Player2:"+player2)//排序後的手牌
 
-//console.log("Player3:"+player3)
+console.log("Player3:"+player3)//排序前的手牌
 player3.sort(compare)
-console.log("Player3:"+player3)
+console.log("Player3:"+player3)//排序後的手牌
 
-//console.log("Player4:"+player4)
+console.log("Player4:"+player4)//排序前的手牌
 player4.sort(compare)
-console.log("Player4:"+player4)
+console.log("Player4:"+player4)//排序後的手牌
