@@ -17,6 +17,7 @@ for(var i=0;i<52;i++){
 }
 console.log(poker.toString());
 var player1=[], player2=[], player3=[],player4=[];
+
 //大到小的排序函式
 function sortnumber(a,b){
     if(b.charCodeAt(0) == a.charCodeAt(0)) 
@@ -37,22 +38,23 @@ console.log(poker.toString());
 //發牌給玩家1
 for(var x=0,y=0; y<13; x++){   
     player1[x]=poker[y++];}
-    player1.sort(sortnumber);
+    player1.sort(sortnumber);//排序手牌
     console.log("Player1:"+player1)
 
 //發牌給玩家2
 for(var x=0,y=13; y<26; x++){  
     player2[x]=poker[y++];}
-    player2.sort(sortnumber);
+    player2.sort(sortnumber);//排序手牌
     console.log("Player2:"+player2)
 
 //發牌給玩家3
 for(var x=0,y=26; y<39; x++){  
         player3[x]=poker[y++];}
-        player3.sort(sortnumber);
+        player3.sort(sortnumber);//排序手牌
         console.log("Player3:"+player3)
+        
 //發牌給玩家4
 for(var x=0,y=39; y<52; x++){  
         player4[x]=poker[y++];}
-        player4.sort(sortnumber);
+        player4.sort(sortnumber);//排序手牌
         console.log("Player4:"+player4)
