@@ -2,7 +2,7 @@ var poker=[];
 
 
 for(var i=0;i<52;i++){
-    switch(parseInt(i/10)){
+    switch(parseInt(i/13)){
         case 0:
             poker.push("♥"+(parseInt(i%13)+1));
             
@@ -46,11 +46,10 @@ for (let i = 0; i < poker.length; ) {
 }
 function compare(a,b){
     if(b.charCodeAt(0) == a.charCodeAt(0) )//同花色
-     //compare charAt(1) charAt(2)同花色 不同數字 排序 
-     
-    {  return a.slice(1,a.length)-b.slice(1,b.length);}//沒作用要把花色去掉
+     //compare charAt(1) charAt(2)同花色 不同數字 排序    
+    {  return b.slice(1,a.length)-a.slice(1,b.length);}//
 
-    else{ return a.charCodeAt(0) - b.charCodeAt(0)//不同花色排序 黑桃,梅花,愛心,方塊
+    else{ return b.charCodeAt(0) - a.charCodeAt(0)//不同花色排序 順序為黑桃,梅花,愛心,方塊
         }
 }
 

@@ -1,5 +1,0 @@
-var DA=["c1","c12","c3","c4","c5","c6","c17","c28","c9","c10","c11","c22","c13"];
-DA=DA.replace("c","");  
-function compare (a, b){return a - b};
-DA.sort(compare)
-console.log(DA.toString())
