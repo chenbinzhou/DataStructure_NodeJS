@@ -1,7 +1,8 @@
 var poker=[];
 
 
-for(var i=0;i<52;i++){
+for(var i=0;i<52;i++)
+{
     switch(parseInt(i/13)){
         case 0:
             poker.push("H"+(parseInt(i%13)+1));//紅心
@@ -15,7 +16,7 @@ for(var i=0;i<52;i++){
             break;
         case 3:
             poker.push("D"+(parseInt(i%13)+1));//方塊
-    }
+                         }
    
 }
  
