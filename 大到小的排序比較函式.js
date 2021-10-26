@@ -29,7 +29,7 @@ function compare(a,b)
 
     else{ return b.charCodeAt(0) - a.charCodeAt(0)//不同花色排序 順序為黑桃,愛心,方塊,梅花
  }
-    ｝
+}
 
 console.log(poker.toString());
 var player1=[], player2=[], player3=[],player4=[];
