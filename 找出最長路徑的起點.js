@@ -60,6 +60,6 @@ var footRange=[]
     };
     console.log("最高步數為"+Array.max(footRange)); 
     var x;
-    x=(footRange.indexOf(Array.max(footRange)));
+    x=(footRange.indexOf(Array.max(footRange)));//取得最高步數後回推起點
     console.log("最長路徑的起點為：["+Math.floor(x/6)+","+(x%6+"]"));
   
