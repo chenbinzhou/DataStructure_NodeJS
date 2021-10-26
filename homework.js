@@ -6,7 +6,7 @@ var floorName=["B3","B2","B1","1","2","2M","3","5","6","7","8"]
 var floorName2=[];    // 2 假設大樓50層樓,8樓以後都是照順序規律的,用程式建立floorName 樓層名稱 homework,
 for(var i=0,k=9;i<=50,k<=50;i++)
 {
-    floorName2[i]=k++;
+    floorName2[i]=k+++ "";
      
 };
 Array.prototype.push.apply(floorName,floorName2 );//合併兩個陣列
