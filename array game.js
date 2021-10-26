@@ -17,7 +17,7 @@ do{
        console.log("Input error! ");
        continue;
    }
-
+//每次遊戲開始前陣列初始化，重新分配索引值
    for (let r = 0; r <row; r++) {    //一排6個雞蛋裡面隨便分配不同索引值  有6排   索引值0~5  
     aryBox.push([]);
     aryVisited.push([]);
@@ -30,13 +30,13 @@ do{
    var idx= aryBox[startR][startC].split(",");//idx[0]=>row idx[1]=>col  /下一步要到的位置
    aryVisited[startR][startC]=1;  //走過的地方變1
    console.log("Visit:"+ startR+", "+startC);
-   var foot=0;//步數
+   var foot=0;//紀錄走的步數
    //loop
    while(true){
        var nextR = parseInt(idx[0]);  //下一步要走的行  
        var nextC = parseInt(idx[1]);  //下一步要走的列
        if(aryVisited[nextR][nextC]==1){  //走到重複的位置就gameover
-           console.log("Game over!");
+           console.log("Game over!");//遊戲結束
            console.log("總共走了："+foot+"步");//顯示總共走了幾步
            break;
               }
