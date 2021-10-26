@@ -8,7 +8,7 @@ var row=6, col=6;    //雞蛋盒與雞蛋
 //             [0,0,0,0,0,0],
 //             [0,0,0,0,0,0]];
 var aryBox=[];    //塑膠袋
-var aryVisited=[]   //用過的雞蛋
+var aryVisited=[]   //用過的雞蛋＝＝
 
 do{
    var startR= parseInt(readline.question('Row start?'));      //選擇起點囉~~~  R是行 c是列
