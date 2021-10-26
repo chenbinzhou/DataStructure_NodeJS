@@ -1,24 +1,36 @@
 var poker=[];
 
 
-for(var i=0;i<52;i++){
+for(var i=0;i<52;i++)
+{
     switch(parseInt(i/13)){
         case 0:
-            poker.push("H"+(parseInt(i%13)+1));
+            poker.push("H"+(parseInt(i%13)+1));//紅心
             
             break;
         case 1:
-            poker.push("S"+(parseInt(i%13)+1));
+            poker.push("S"+(parseInt(i%13)+1));//黑桃
             break;
         case 2:
-            poker.push("C"+(parseInt(i%13)+1));
+            poker.push("C"+(parseInt(i%13)+1));//梅花
             break;
         case 3:
-            poker.push("D"+(parseInt(i%13)+1));
-    }
+            poker.push("D"+(parseInt(i%13)+1));//方塊
+                         }
    
 }
  
+
+//大到小的排序比較函式
+function compare(a,b)
+    {
+    if(b.charCodeAt(0) == a.charCodeAt(0))//同花色 不同數字 大小排序  
+    {  return b.slice(1,b.length)-a.slice(1,a.length);}
+
+    else{ return b.charCodeAt(0) - a.charCodeAt(0)//不同花色排序 順序為黑桃,愛心,方塊,梅花
+ }
+    ｝
+
 console.log(poker.toString());
 var player1=[], player2=[], player3=[],player4=[];
 
@@ -45,14 +57,7 @@ for (let i = 0; i < poker.length; ) {
     
 }
 
-//大到小的排序比較函式
-function compare(a,b){
-    if(b.charCodeAt(0) == a.charCodeAt(0))//同花色 不同數字 大小排序  
-    {  return b.slice(1,b.length)-a.slice(1,a.length);}
 
-    else{ return b.charCodeAt(0) - a.charCodeAt(0)//不同花色排序 順序為黑桃,愛心,方塊,梅花
-        }
-}
 
 console.log("Player1:"+player1)//玩家1排序前的手牌
 player1.sort(compare);
