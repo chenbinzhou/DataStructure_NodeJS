@@ -1,24 +1,24 @@
 const readline = require("readline-sync");
 
-var row=6, col=6;    //雞蛋盒與雞蛋
+var row=6, col=6;    //行列
 // var aryBox=[[0,0,0,0,0,0],
 //             [0,0,0,0,0,0],
 //             [0,0,0,0,0,0],
 //             [0,0,0,0,0,0],
 //             [0,0,0,0,0,0],
 //             [0,0,0,0,0,0]];
-var aryBox=[];    //塑膠袋
-var aryVisited=[]   //用過的雞蛋
+var aryBox=[];    
+var aryVisited=[]   //走過的
 
 do{
-   var startR= parseInt(readline.question('Row start?'));      //選擇起點囉~~~  R是行 c是列
+   var startR= parseInt(readline.question('Row start?'));      //選擇起點  R是行 c是列
    var startC= parseInt(readline.question('Col start?'));
    if(isNaN(startR) || isNaN(startC) || startR<0 || startR>=row || startC<0 || startC>=col){ //判斷輸入起點的值合理嗎??????????????????????????????????
        console.log("Input error! ");
        continue;
    }
 //每次遊戲開始前陣列初始化，重新分配索引值
-   for (let r = 0; r <row; r++) {    //一排6個雞蛋裡面隨便分配不同索引值  有6排   索引值0~5  
+   for (let r = 0; r <row; r++) {    //一排6個裡面隨便分配不同索引值  有6排   索引值0~5  
     aryBox.push([]);
     aryVisited.push([]);
     for (let c = 0; c < col; c++) {
@@ -43,7 +43,7 @@ do{
         else      
        {
          var idx= aryBox[nextR][nextC].split(",");//idx[0]=>row idx[1]=>col 
-         aryVisited[nextR][nextC]=1;      //沒有走到遊戲就繼續
+         aryVisited[nextR][nextC]=1;      //沒有走到重複的遊戲就繼續
          console.log("Visit:"+ nextR+", "+nextC);
          foot++;//步數＋1
          

@@ -1,15 +1,15 @@
 const readline = require("readline-sync");
 
-var row=6, col=6;    //雞蛋盒與雞蛋
+var row=6, col=6;    //行列
 // var aryBox=[[0,0,0,0,0,0],
 //             [0,0,0,0,0,0],
 //             [0,0,0,0,0,0],
 //             [0,0,0,0,0,0],
 //             [0,0,0,0,0,0],
 //             [0,0,0,0,0,0]];
-var aryBox=[];    //塑膠袋
-var aryVisited=[]   //用過的雞蛋
-var footRange=[]
+var aryBox=[];    
+var aryVisited=[]   //走過的
+var footRange=[]   //步數紀錄
 //找出最長路徑的起點
 //從0,0到5,5都當作起點試一次
 //走最多步者即是最長路徑的起點
@@ -17,7 +17,7 @@ var footRange=[]
        for(k=0;k<6;k++){
            
 
-        for (let r = 0; r <row; r++) {    //一排6個雞蛋裡面隨便分配不同索引值  有6排   索引值0~5  
+        for (let r = 0; r <row; r++) {    //一排6個裡面隨便分配不同索引值   有6排  索引值0~5  
             aryBox.push([]);
             aryVisited.push([]);
             for (let c = 0; c < col; c++) {
@@ -44,7 +44,7 @@ var footRange=[]
         else      
        {
          var idx= aryBox[nextR][nextC].split(",");//idx[0]=>row idx[1]=>col 
-         aryVisited[nextR][nextC]=1;      //沒有走到遊戲就繼續
+         aryVisited[nextR][nextC]=1;      //沒有走到重複的遊戲就繼續
          console.log("Visit:"+ nextR+", "+nextC);
          foot++;//步數＋1
          
