@@ -79,7 +79,7 @@ Life.prototype.update = function(){
 var game = new Life(10,10);//設置生存空間大小
 
 game.Initialize();//初始化
-game.setStatusAt(1,0,LIVE);//設定某一點狀態
+game.setStatusAt(1,0,LIVE);//設定某一點狀態 DEAD,LIVE
 game.setStatusAt(1,1,LIVE);
 game.setStatusAt(1,2,LIVE);
 game.setStatusAt(1,3,LIVE);
