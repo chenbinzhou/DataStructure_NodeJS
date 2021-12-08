@@ -64,10 +64,10 @@ Life.prototype.update = function(){
             if(nCount == 3) //鄰居個數＝3 DEAD > LIVE , LIVE > LIVE
                nextGrid[r][c] = LIVE;
 
-            if(nCount <=1 ) //鄰居個數<=1 太孤單 >DEAD
+            else if(nCount <=1 ) //鄰居個數<=1 太孤單 >DEAD
                nextGrid[r][c] = DEAD;
 
-            if(nCount >=4 ) //鄰居個數>=4 太擠 >DEAD
+            else if(nCount >=4 ) //鄰居個數>=4 太擠 >DEAD
                nextGrid[r][c] = DEAD;
         }
     }
