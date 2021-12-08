@@ -104,11 +104,11 @@ class Board{
            }
        } 
     }
-    drawpoint(){              
+    drawpoint(row,col){              
      this.ctx2d.fillRect(col*this.size, row*this.size, this.size, this.size)
-     this.ctx2d.strokeRect(c*this.size, r*this.size, this.size, this.size);
+     this.ctx2d.strokeRect(col*this.size, row*this.size, this.size, this.size);
        } 
-    eraser(){
+    eraser(row,col){
     this.ctx2d.clearRect(col*this.size, row*this.size, this.size, this.size);
     }
 
