@@ -81,13 +81,12 @@ Life.prototype.update = function(){
 }
 
 
-
+var canvas = document.getElementById("gameBorad");//取得canva 尺寸
 
 
 class Board{
     constructor(_life){
         this.game = _life;
-        var canvas = document.getElementById("gameBorad");//取得canva 尺寸
         this.size = Math.floor(canvas.height/this.game.row);
         this.ctx2d = document.getElementById("gameBorad").getContext("2d");
         this.ctx2d.fillStyle = "#ff0000";
@@ -105,6 +104,14 @@ class Board{
            }
        } 
     }
+    drawpoint(){              
+     this.ctx2d.fillRect(col*this.size, row*this.size, this.size, this.size)
+     this.ctx2d.strokeRect(c*this.size, r*this.size, this.size, this.size);
+       } 
+    eraser(){
+    this.ctx2d.clearRect(col*this.size, row*this.size, this.size, this.size);
+    }
+
 }
 
 
@@ -126,9 +133,11 @@ function next(){
 function clickHandler(event){
     var col = Math.floor(event.offsetX/gameBorad.size);
     var row = Math.floor(event.offsetY/gameBorad.size);
-    if(game.getStatusAt(row, col)== LIVE)
+    if(game.getStatusAt(row, col)== LIVE){
        game.setStatusAt(row,col, DEAD);
+       gameBorad.eraser(row,col);
+    }
     else
         game.setStatusAt(row,col, LIVE);
-    gameBorad.draw();
+    gameBorad.drawpoint(row,col);
 }
