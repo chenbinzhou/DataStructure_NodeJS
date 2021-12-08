@@ -110,6 +110,7 @@ class Board{
        } 
     eraser(row,col){    //單獨清一格
     this.ctx2d.clearRect(col*this.size, row*this.size, this.size, this.size);
+    this.ctx2d.strokeRect(col*this.size, row*this.size, this.size, this.size);
     }
 
 }
@@ -138,6 +139,6 @@ function clickHandler(event){
        gameBorad.eraser(row,col);
     }
     else
-        game.setStatusAt(row,col, LIVE);
-    gameBorad.drawpoint(row,col);
+        {game.setStatusAt(row,col, LIVE);
+        gameBorad.drawpoint(row,col);}
 }
